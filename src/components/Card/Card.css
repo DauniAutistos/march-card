@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Poppins:wght@400;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.card{
+    width: 700px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    
+}
+.outside:hover {
+    transform: rotateY(-180deg);
+}
+.outside, .inside{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+
+}
+.inside{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #89dcdd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   
+}
+.img-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.img-block img{
+    margin-left: 40%;
+}
+.outside{
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: transform .8s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.front, .back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+}
+.front{
+    background-color: #89dcdd;
+    background-image: url("../img/women.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.textus{
+    font-family: 'Pacifico', sans-serif;
+    color:white;
+    font-size: 30px;
+}
+.back{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    transform: rotateY(180deg);
+    background-color: #89dcdd;
+}
+.card-appear {
+    animation: slideDown 1s ease-out forwards;
+}
+
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-200px); 
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0); 
+      opacity: 1;
+    }
+  }
